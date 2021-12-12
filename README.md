@@ -10,7 +10,7 @@
 ```javascript
 Show translation in code!
 ```
-# - Replacement of google or yandex tranclsators!
+# - Replacement of google or yandex translators!
 
 
 ```javascript
