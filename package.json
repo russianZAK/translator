@@ -1,0 +1,76 @@
+{
+  "name": "translate",
+  "displayName": "translateNamed",
+  "description": "",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.49.0"
+  },
+  "publisher": "Nikita Fisenko",
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/russianZAK"
+  },
+  "icon": "images/icon.png",
+  "activationEvents": [
+    "onCommand:translate.entoru"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "translate.entoru",
+        "title": "translate"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorHasSelection",
+          "command": "translate.entoru",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": [
+      {
+        "title": "translateNamed",
+        "properties": {
+          "translate.appid": {
+            "type": "string",
+            "description": "appid",
+            "default": "20200921000570318"
+          },
+          "translate.secret": {
+            "type": "string",
+            "description": "API",
+            "default": "GLMeRH02ZIQHOCIPlJhW"
+          }
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^7.0.1",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.49.0",
+    "eslint": "^6.8.0",
+    "glob": "^7.1.6",
+    "mocha": "^7.0.1",
+    "typescript": "^3.7.5",
+    "vscode-test": "^1.3.0"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "md5": "^2.3.0"
+  }
+}
